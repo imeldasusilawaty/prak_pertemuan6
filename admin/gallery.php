@@ -317,7 +317,7 @@ $images = glob("uploads/*.{jpg,jpeg,png,gif}", GLOB_BRACE);
                                 <?php endif; ?>
                             </div>
                             <div class="text-center mt-4">
-                                <a href="upload_form.html" class="btn btn-primary">
+                                <a href="uploads.html" class="btn btn-primary">
                                     <i class="bi bi-upload"></i> Kembali ke Upload
                                 </a>
                             </div>
