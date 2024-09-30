@@ -1,0 +1,130 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-container {
+  width: 90%;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#gallery {
+  display: flex; /* Menggunakan flexbox untuk tampilan horizontal */
+  overflow-x: auto; /* Scroll horizontal jika konten terlalu lebar */
+  gap: 15px; /* Jarak antar gambar */
+  padding: 10px;
+}
+
+#gallery img {
+  flex-shrink: 0; /* Gambar tidak mengecil ketika terlalu banyak gambar */
+  width: 200px; /* Lebar tetap untuk setiap gambar */
+  height: 200px; /* Tinggi tetap untuk semua gambar */
+  object-fit: cover; /* Menjaga proporsi gambar */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px; /* Sudut melengkung untuk tampilan halus */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#gallery img:hover {
+  transform: scale(1.05); /* Efek zoom saat hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow lebih dalam saat hover */
+}
+
+/* Modal Styles */
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 60px;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 500px; /* Batas ukuran modal lebih kecil */
+  max-height: 80vh; /* Menyesuaikan tinggi maksimum modal dengan tampilan */
+  object-fit: contain; /* Memastikan gambar tetap proporsional dan tidak pecah */
+  border-radius: 10px; /* Tambah sudut melengkung untuk gambar di modal */
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 600px) {
+  #gallery img {
+    width: 150px;
+    height: 150px; /* Sesuaikan ukuran gambar di layar kecil */
+  }
+}
+
+/* Styling dasar untuk tombol filter */
+.filter-btn {
+  background-color: #4c8cd1;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  margin: 8px;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+}
+
+/* Efek hover untuk tombol filter */
+.filter-btn:hover {
+  background-color: #06111d;
+  transform: translateY(-3px); /* Tombol naik sedikit saat di-hover */
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4); /* Shadow lebih dalam saat hover */
+}
+
+/* Styling tombol filter saat aktif */
+.filter-btn.active {
+  background-color: #285161;
+  color: white;
+  box-shadow: 0 6px 12px rgba(40, 167, 69, 0.4);
+}
+
+/* Styling untuk layar lebih kecil */
+@media (max-width: 600px) {
+  .filter-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
